@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B7AE9D"
+        tools:context=".ListOfActivity"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/butt"
+                android:layout_width="145dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="5dp"
+                android:background="#8A151B"
+                android:onClick="useraccount_update"
+                android:text="@string/my_account"
+                android:textColor="#F2F2F2"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="160dp"
+                android:background="#8A151B"
+                android:onClick="create_sale"
+                android:text="+"
+                android:textColor="#F2F2F2"
+                android:textSize="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listview_houses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigationdrawer_listofactivity"
+        app:headerLayout="@layout/navigation_header"
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        app:menu="@layout/navigation_item"
+        android:layout_gravity="start"
+        android:foregroundGravity="center"/>
+
+</android.support.v4.widget.DrawerLayout>

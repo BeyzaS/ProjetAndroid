@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Projet</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="register">Register</string>
+    <string name="lastname">Lastname</string>
+    <string name="firstname">Firstname</string>
+    <string name="email">Email</string>
+    <string name="m2">M2</string>
+    <string name="description">Description</string>
+    <string name="floor">Floor</string>
+    <string name="price">Price</string>
+    <string name="address">Address</string>
+    <string name="town">Town</string>
+    <string name="all_towns">All towns</string>
+    <string name="create_new_location">Create new location</string>
+    <string name="create">Create</string>
+    <string name="new_town">New town</string>
+    <string name="details_of_the_house">Details of the property</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="details_of_the_location">Details of the location</string>
+    <string name="my_account">My account</string>
+    <string name="already_registred_text">Already registered? Click here to identify yourself.</string>
+    <string name="dont_have_an_account_text">Don\'t have an account yet? Click here to create one.</string>
+    <string name="languages">Languages</string>
+    <string name="about">About</string>
+    <string name="logout">Log out</string>
+</resources>
