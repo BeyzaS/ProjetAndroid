@@ -31,6 +31,7 @@ public class Languages extends AppCompatActivity {
         }
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
+        
     }
 
 
