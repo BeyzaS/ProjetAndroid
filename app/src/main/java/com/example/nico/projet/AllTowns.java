@@ -56,13 +56,13 @@ public class AllTowns extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_languages:
-                //Intent intent1 = new Intent(AllTowns.this, Languages.class);
-                //startActivity(intent1);
+                Intent intent1 = new Intent(AllTowns.this, Languages.class);
+                startActivity(intent1);
                 return true;
 
             case R.id.item_about:
-                //Intent intent2 = new Intent(AllTowns.this, About.class);
-                //startActivity(intent2);
+                Intent intent2 = new Intent(AllTowns.this, About.class);
+                startActivity(intent2);
                 return true;
 
             case R.id.item_logout:

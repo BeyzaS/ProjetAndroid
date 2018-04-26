@@ -10,7 +10,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B7AE9D"
+        android:background="@color/backgroundColor"
         tools:context=".create_location"
         android:orientation="vertical">
 
@@ -19,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_new_location"
-            android:textColor="#585340"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
             android:textSize="30dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
@@ -32,12 +33,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:inputType="text|number|date|time"
-            android:textColor="#F2F2F2"
-            android:hint="@string/description"
-            app:layout_constraintTop_toBottomOf="@+id/town_newlocation"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor"
+            android:hint="@string/description" />
 
         <EditText
             android:id="@+id/town_newlocation"
@@ -45,36 +43,33 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:inputType="text"
-            android:textColor="#F2F2F2"
+            android:textColor="@color/textColor"
             android:hint="@string/town"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText6"
-            tools:layout_editor_absoluteX="15dp" />
+            android:layout_marginBottom="32dp" />
 
         <CheckBox android:id="@+id/hasswimmingpool_newlocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has swimming pool"
             android:layout_marginLeft="16dp"
-            android:textColor="#585340"
+            android:hint="@string/hasswimmingpool"
+            android:textColorHint="@color/textColor"
             android:onClick="onCheckBoxClickedSwimmingPool"/>
 
         <CheckBox android:id="@+id/hascinema_newlocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has cinema"
+            android:hint="@string/hascinema"
+            android:textColorHint="@color/textColor"
             android:layout_marginLeft="16dp"
-            android:textColor="#585340"
             android:onClick="onCheckBoxClickedCinema"/>
 
         <CheckBox android:id="@+id/hassportcenter_newlocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has sport center"
+            android:hint="@string/hassportcenter"
+            android:textColorHint="@color/textColor"
             android:layout_marginLeft="16dp"
-            android:textColor="#585340"
             android:onClick="onCheckBoxClickedSportCenter"/>
 
         <Button
@@ -82,9 +77,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#8A151B"
+            android:background="@color/buttonColor"
             android:text="@string/create"
-            android:textColor="#F2F2F2"
+            android:textColor="@color/backgroundColor"
             android:layout_marginTop="32dp"
             android:onClick="insert_new_location"
             app:layout_constraintTop_toBottomOf="@+id/editText"

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         EditText elastname = (EditText)findViewById(R.id.lastname_register);
         String lastname = elastname.getText().toString();
 
-        EditText efirstname = (EditText)findViewById(R.id.lastname_register);
+        EditText efirstname = (EditText)findViewById(R.id.firstname_register);
         String firstname = efirstname.getText().toString();
 
         EditText epassword = (EditText)findViewById(R.id.password_register);
@@ -58,12 +58,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         }
 
-
-        //HouseSellingDatabase.getInstance(this).userDAO().insertUser(new User(firstname, lastname, username, password, email));
-
-
-        //Intent intent = new Intent(this, ListOfActivity.class);
-        //startActivity(intent);
     }
 
     public void register_link(View view){
@@ -95,13 +89,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_languages:
-                //Intent intent1 = new Intent(MainActivity.this, Languages.class);
-                //startActivity(intent1);
+                Intent intent1 = new Intent(MainActivity.this, Languages.class);
+                startActivity(intent1);
                 return true;
 
             case R.id.item_about:
-                //Intent intent2 = new Intent(MainActivity.this, About.class);
-                //startActivity(intent2);
+                Intent intent2 = new Intent(MainActivity.this, About.class);
+                startActivity(intent2);
                 return true;
 
             case R.id.item_logout:

@@ -28,4 +28,10 @@
     <string name="languages">Langues</string>
     <string name="about">A propos</string>
     <string name="logout">Se déconnecter</string>
+    <string name="chooselanguages">Choisir la langue</string>
+    <string name="about_text">HouseSelling est une application mobile pour toutes les personnes qui souhaitent vendre un ou plusieurs biens immobiliers.\n\nIl suffit de créer un compte et d’ajouter des biens en entrant leurs caractéristiques. Si une ville n’est pas proposée automatiquement, elle doit être ajoutée via le bouton "Nouvelle ville".\n\nVous avez la possibilité d’éditer vos données personnelles, les caractéristiques de votre ou vos biens immobiliers et des localités.\n\nVous pouvez également supprimer une ou plusieurs localités, votre ou vos biens immobiliers et votre compte utilisateur. Attention, les biens immobiliers liés à votre compte sont aussi effacés.\n\nNous vous remercions d’avoir choisi HouseSelling.\n\nBonne visite !</string>
+    <string name="hascinema">A un cinéma</string>
+    <string name="hassportcenter">A un centre de sport</string>
+    <string name="hasswimmingpool">A une piscine</string>
+    <string name="addnewhouse">Ajouter un bien</string>
 </resources>

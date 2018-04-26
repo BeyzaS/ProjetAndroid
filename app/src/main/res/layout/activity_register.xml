@@ -10,7 +10,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B7AE9D"
+        android:background="@color/backgroundColor"
         tools:context=".MainActivity"
         android:orientation="vertical">
 
@@ -19,12 +19,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
-            android:textColor="#585340"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
             android:textSize="30dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/username_register"
@@ -32,12 +31,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:hint="@string/username"
             android:inputType="textPersonName"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/editText2"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <EditText
             android:id="@+id/lastname_register"
@@ -45,12 +41,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:hint="@string/lastname"
             android:inputType="textPersonName"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/editText6"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <EditText
             android:id="@+id/firstname_register"
@@ -58,12 +51,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:hint="@string/firstname"
             android:inputType="textPersonName"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <EditText
             android:id="@+id/email_register"
@@ -71,12 +61,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/editText9"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <EditText
             android:id="@+id/password_register"
@@ -84,36 +71,30 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textColor="#F2F2F2"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText12"
-            tools:layout_editor_absoluteX="14dp" />
+            android:textColor="@color/textColor"
+            android:layout_marginBottom="50dp" />
 
         <Button
             android:id="@+id/button_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#8A151B"
+            android:background="@color/buttonColor"
             android:text="@string/register"
-            android:onClick="register"
-            app:layout_constraintTop_toBottomOf="@+id/editText"
-            tools:layout_editor_absoluteX="148dp" />
+            android:textColor="@color/backgroundColor"
+            android:onClick="register" />
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="311dp"
-            android:layout_height="31dp"
+            android:id="@+id/alreadyregistred"
+            android:layout_width="320dp"
+            android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:onClick="register_link"
             android:text="@string/already_registred_text"
-            android:textColor="#585340"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            tools:layout_editor_absoluteX="37dp" />
+            android:textColor="@color/textColor" />
 
     </LinearLayout>
 

@@ -10,7 +10,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B7AE9D"
+        android:background="@color/backgroundColor"
         tools:context=".DetailsLocation"
         android:orientation="vertical">
 
@@ -19,12 +19,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/details_of_the_location"
-            android:textColor="#585340"
+            android:textColor="@color/textColor"
+            android:textStyle="bold"
             android:textSize="30dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:layout_marginTop="16dp" />
 
 
         <EditText
@@ -33,11 +32,8 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:inputType="textPersonName"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/editText2"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <EditText
             android:id="@+id/town_details_location"
@@ -45,18 +41,15 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
-            android:ems="10"
             android:inputType="textPersonName"
-            android:textColor="#F2F2F2"
-            app:layout_constraintTop_toBottomOf="@+id/editText6"
-            tools:layout_editor_absoluteX="15dp" />
+            android:textColor="@color/textColor" />
 
         <CheckBox android:id="@+id/hasswimmingpool_details_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has swimming pool"
             android:layout_marginLeft="16dp"
-            android:textColor="#585340"
+            android:textColorHint="@color/textColor"
+            android:hint="@string/hasswimmingpool"
             android:onClick="onCheckBoxClickedSwimmingPool2"/>
 
         <CheckBox
@@ -64,16 +57,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="Has cinema"
-            android:textColor="#585340"
+            android:textColorHint="@color/textColor"
+            android:hint="@string/hascinema"
             android:onClick="onCheckBoxClickedCinema2"/>
 
         <CheckBox android:id="@+id/hassportcenter_details_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Has sport center"
             android:layout_marginLeft="16dp"
-            android:textColor="#585340"
+            android:textColorHint="@color/textColor"
+            android:hint="@string/hassportcenter"
             android:onClick="onCheckBoxClickedSportCenter2"/>
 
 
@@ -87,12 +80,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:background="#8A151B"
+                android:background="@color/buttonColor"
                 android:text="@string/save"
+                android:textColor="@color/backgroundColor"
                 android:onClick="savelocation"
-                android:layout_marginLeft="100dp"
-                app:layout_constraintTop_toBottomOf="@+id/editText"
-                tools:layout_editor_absoluteX="148dp" />
+                android:layout_marginLeft="100dp" />
 
             <Button
                 android:id="@+id/button_deleteuser"
@@ -100,11 +92,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:background="#8A151B"
+                android:background="@color/buttonColor"
                 android:text="@string/delete"
-                android:onClick="deletelocation"
-                app:layout_constraintTop_toBottomOf="@+id/editText"
-                tools:layout_editor_absoluteX="148dp" />
+                android:textColor="@color/backgroundColor"
+                android:onClick="deletelocation" />
 
         </LinearLayout>
 

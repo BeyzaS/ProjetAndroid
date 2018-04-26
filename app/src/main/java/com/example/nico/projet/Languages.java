@@ -1,39 +1,114 @@
 package com.example.nico.projet;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
+import android.preference.ListPreference;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.Locale;
 
-public class Languages extends AppCompatActivity {
 
+public class Languages extends Activity implements View.OnClickListener {
+    private ImageView swiss, british, turkish;
+    private Locale myLocale;
+
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_languages);
+        Intent intent = getIntent();
+
+        //Lié bouton
+        swiss = findViewById(R.id.swiss);
+        swiss.setOnClickListener(this);
+
+        british = findViewById(R.id.british);
+        british.setOnClickListener(this);
+
+        turkish = findViewById(R.id.turkish);
+        turkish.setOnClickListener(this);
+
+        loadLocale();
     }
 
-    public void changelanguage(View view){
+    //Loading a saved locale
+    public void loadLocale()
+    {
+        String langPref = "Language";
+        SharedPreferences prefs = getSharedPreferences("CommonPrefs",Activity.MODE_PRIVATE);
+        String language = prefs.getString(langPref, "");
+        changeLang(language);
+    }
 
-        Configuration config = new Configuration(getResources().getConfiguration());
+    //Save the current locale
+    private void saveLocale(String lang) {
+        String langPref = "Language";
+        SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(langPref, lang);
+        editor.commit();
+    }
 
-        switch (view.getId())
+    //Changing the language in the application
+    public void changeLang(String lang)
+    {
+        if (lang.equalsIgnoreCase(""))
+            return;
+        myLocale = new Locale(lang);
+        saveLocale(lang);
+        Locale.setDefault(myLocale);
+        android.content.res.Configuration config = new android.content.res.Configuration();
+        config.locale = myLocale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        String lang ="en";
+        switch (v.getId())
         {
-            case R.id.swiss:
-                config.setLocale(Locale.FRENCH);
-                break;
             case R.id.british:
-                config.setLocale(Locale.ENGLISH);
+                lang="en";
+                break;
+
+            case R.id.swiss:
+                lang="fr";
+                break;
+
+            case R.id.turkish:
+                lang="tr";
+                break;
+
+            default:
                 break;
         }
-        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+        changeLang(lang);
 
-        
+        Intent intent = new Intent(Languages.this, MainActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
-
+    @Override
+    public void onConfigurationChanged(android.content.res.Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (myLocale != null){
+            newConfig.locale = myLocale;
+            Locale.setDefault(myLocale);
+            getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
+        }
+    }
 
 }

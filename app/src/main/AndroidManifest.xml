@@ -24,7 +24,8 @@
         <activity android:name=".DetailsHouse" />
         <activity android:name=".AllTowns" />
         <activity android:name=".DetailsLocation" />
-        <activity android:name=".Languages"></activity>
+        <activity android:name=".Languages" />
+        <activity android:name=".About"></activity>
     </application>
 
 </manifest>

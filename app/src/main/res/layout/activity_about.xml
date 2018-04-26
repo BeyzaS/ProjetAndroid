@@ -11,30 +11,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColor"
-        tools:context=".AllTowns"
+        tools:context=".About"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/all_towns_textview"
+            android:id="@+id/about"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/all_towns"
+            android:text="@string/about"
             android:textColor="@color/textColor"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp" />
 
-        <ListView
-            android:id="@+id/list"
+        <TextView
+            android:id="@+id/text_about"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/about_text"
+            android:textColor="@color/textColor"
+            android:textSize="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"/>
+
 
     </LinearLayout>
 
     <!-- Navigation Drawer -->
     <android.support.design.widget.NavigationView
-        android:id="@+id/navigationdrawer_alltowns"
+        android:id="@+id/navigationdrawer_about"
         app:headerLayout="@layout/navigation_header"
         android:layout_width="220dp"
         android:layout_height="match_parent"
