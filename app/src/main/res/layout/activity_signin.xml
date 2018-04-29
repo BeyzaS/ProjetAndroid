@@ -29,10 +29,12 @@
 
         <EditText
             android:id="@+id/username_signin"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:hint="@string/username"
             android:textColor="@color/textColor"
             android:inputType="textPersonName" />
@@ -40,10 +42,12 @@
 
         <EditText
             android:id="@+id/password_signin"
-            android:layout_width="354dp"
+            android:layout_width="match_parent"
             android:layout_height="53dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:hint="@string/password"
             android:textColor="@color/textColor"
             android:inputType="textPassword" />

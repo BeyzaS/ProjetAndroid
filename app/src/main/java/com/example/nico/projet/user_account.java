@@ -8,8 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.nico.projet.Local.HouseSellingDatabase;
 import com.example.nico.projet.Model.House;
@@ -24,11 +24,14 @@ public class user_account extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
 
+        //ADD THE NAVIGATION DRAWER
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_useraccount);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //GET THE RIGHT USER
         User user = HouseSellingDatabase.getInstance(this).userDAO().getUserById(getIntent().getIntExtra("IdUser", 0));
 
+        //GET THE VALUES OF THE USER AND PUT THEM IT INTO THE EDITTEXTS
         EditText eusername = (EditText)findViewById(R.id.username_account);
         eusername.setText(user.getUsername(), TextView.BufferType.EDITABLE);
 
@@ -43,60 +46,49 @@ public class user_account extends AppCompatActivity implements NavigationView.On
 
         EditText epassword = (EditText)findViewById(R.id.password_account);
         epassword.setText(user.getPassword(), TextView.BufferType.EDITABLE);
-
     }
 
-    public void saveuser(View view)
-    {
+    //ACTION TO THE BUTTON SAVE
+    public void saveuser(View view) {
+        //GET THE RIGHT USER THANKS TO THE IDUSER
         User user = HouseSellingDatabase.getInstance(this).userDAO().getUserById(getIntent().getIntExtra("IdUser", 0));
 
+        //SET THE VALUES OF THE USER
         user.setUsername(((EditText)findViewById(R.id.username_account)).getText().toString());
         user.setLastname(((EditText)findViewById(R.id.lastname_account)).getText().toString());
         user.setFirstname(((EditText)findViewById(R.id.firstname_account)).getText().toString());
         user.setEmail(((EditText)findViewById(R.id.email_account)).getText().toString());
         user.setPassword(((EditText)findViewById(R.id.password_account)).getText().toString());
 
-
-        // HouseSellingDatabase.getInstance(this).userDAO().updateUser(user.getId(), ((EditText)findViewById(R.id.firstname_account)).getText().toString(), ((EditText)findViewById(R.id.lastname_account)).getText().toString(), ((EditText)findViewById(R.id.username_account)).getText().toString(), ((EditText)findViewById(R.id.password_account)).getText().toString(),((EditText)findViewById(R.id.email_account)).getText().toString() );
-
+        //UPDATE DATABASE
         HouseSellingDatabase.getInstance(this).userDAO().updateUser(user);
 
+        //GO TO THE PREVIOUS ACTIVITY WHICH IS THE LIST OF HOUSES OF THE SELLER
         Intent intent = new Intent(this, ListOfActivity.class);
-
         intent.putExtra("IdUser", getIntent().getIntExtra("IdUser", 0));
-
         startActivity(intent);
-
     }
 
-    public void deleteuser(View view)
-    {
-        // WE JUST NEED THE USERID LATER ...
+    public void deleteuser(View view) {
+        //WE JUST NEED THE USERID LATER ...
         User user = HouseSellingDatabase.getInstance(this).userDAO().getUserById(getIntent().getIntExtra("IdUser", 0));
 
-        // WE NEED THIS FOR THE SIZE OF THE LIST
+        //WE NEED THIS FOR THE SIZE OF THE LIST
         List <House> houses = HouseSellingDatabase.getInstance(this).houseDAO().getHousesOfUserForDelete(user.getId());
 
-        /*
-        // WE DELETE ONE BY ONE THE HOUSE OF THE USER
-        for (int i = 0 ; i <= houses.size() ; i++)
-        {
-            // FIRST DELETE HOUSES OF THE USER
-            HouseSellingDatabase.getInstance(this).houseDAO().deleteHouse(HouseSellingDatabase.getInstance(this).houseDAO().getHousesOfUserForDelete(user.getId()).get(i));
-        }
-        */
-
+        //DELETE THE HOUSES OF THE USER
         HouseSellingDatabase.getInstance(this).houseDAO().deleteHouses(houses);
 
-        // DELETE USER
+        //DELETE USER
         HouseSellingDatabase.getInstance(this).userDAO().deleteUser(HouseSellingDatabase.getInstance(this).userDAO().getUserById(getIntent().getIntExtra("IdUser", 0)));
 
+        //GO TO THE MAINACTIVITY BECAUSE
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-
     }
 
     @Override
+    //TO REDIRECT MENUS TO THE RIGHT PAGE THANKS TO THE ID OF THE ITEM OF THE NAVIGATION DRAWER
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_languages:
@@ -114,9 +106,16 @@ public class user_account extends AppCompatActivity implements NavigationView.On
                 startActivity(intent3);
                 return true;
 
-
             default:
                 return false;
         }
+    }
+
+    //ACTION THE BACK BUTTON
+    public void onBackPressed() {
+        Intent intent = new Intent(this, ListOfActivity.class);
+        intent.putExtra("IdUser", getIntent().getIntExtra("IdUser", 0));
+        startActivity(intent);
+        finish();
     }
 }

@@ -25,51 +25,89 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp" />
 
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="@color/textColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/description_details_house"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:inputType="textPersonName"
             android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/m2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/m2"
+            android:textColor="@color/textColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/m2_details_house"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
             android:inputType="textPersonName"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            android:textColor="@color/textColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/price_details_house"
-            android:layout_width="355dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_marginTop="24dp"
             android:inputType="textPersonName"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:textColor="@color/textColor" />
 
-        <EditText
-            android:id="@+id/floor_details_house"
-            android:layout_width="355dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/textColor" />
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textColor="@color/textColor"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp" />
 
         <EditText
             android:id="@+id/address_details_house"
-            android:layout_width="356dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginBottom="35dp"
             android:inputType="text"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:textColor="@color/textColor" />
 
         <LinearLayout

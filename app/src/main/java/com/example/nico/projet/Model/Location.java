@@ -7,9 +7,6 @@ import android.arch.persistence.room.PrimaryKey;
 
 import io.reactivex.annotations.NonNull;
 
-// CORRESPOND A UNE TABLE, ET CHAMP = COLONNE
-
-
 @Entity(tableName = "location")
 public class Location {
 
@@ -126,8 +123,8 @@ public class Location {
         }
 
         return
-                "\nDescription : " + description +
-                "\nTown : " + town +
+                description +
+                "\n" + town +
                         "\n" + swimmingpool +
                         "\n" + cinema +
                         "\n" + sportcenter;

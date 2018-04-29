@@ -8,7 +8,7 @@
     <string name="lastname">Soyad</string>
     <string name="firstname">Ad</string>
     <string name="email">e-posta adresi</string>
-    <string name="m2">M2</string>
+    <string name="m2">Metre karesi</string>
     <string name="description">Açıklama</string>
     <string name="floor">Kat</string>
     <string name="price">Fiyat</string>
@@ -22,7 +22,6 @@
     <string name="save">Kaydet</string>
     <string name="delete">Sil</string>
     <string name="details_of_the_location">Yerin ayrıntiları</string>
-    <string name="my_account">Hesabım</string>
     <string name="languages">Diller</string>
     <string name="logout">Çıkış yap</string>
     <string name="about">Hakımızda</string>
@@ -33,5 +32,7 @@
     <string name="hascinema">Sineması var</string>
     <string name="hassportcenter">Spor merkezi var</string>
     <string name="hasswimmingpool">Havuzu var</string>
-    <string name="addnewhouse">Mülk ekle</string>
+    <string name="listofhouse">Mülklerim</string>
+    <string name="myaccount">Hesabım</string>
+
 </resources>

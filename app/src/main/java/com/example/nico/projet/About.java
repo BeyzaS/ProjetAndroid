@@ -14,11 +14,13 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        //TO ADD THE NAVIGATION DRAWER TO THE ACTIVITY
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigationdrawer_about);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
+    //TO REDIRECT MENUS TO THE RIGHT PAGE THANKS TO THE ID OF THE ITEM OF THE NAVIGATION DRAWER
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_languages:
@@ -35,7 +37,6 @@ public class About extends AppCompatActivity implements NavigationView.OnNavigat
                 Intent intent3 = new Intent(About.this, SignIn.class);
                 startActivity(intent3);
                 return true;
-
 
             default:
                 return false;

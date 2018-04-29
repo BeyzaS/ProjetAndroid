@@ -7,7 +7,7 @@
     <string name="lastname">Lastname</string>
     <string name="firstname">Firstname</string>
     <string name="email">Email</string>
-    <string name="m2">M2</string>
+    <string name="m2">Square meter</string>
     <string name="description">Description</string>
     <string name="floor">Floor</string>
     <string name="price">Price</string>
@@ -21,7 +21,6 @@
     <string name="save">Save</string>
     <string name="delete">Delete</string>
     <string name="details_of_the_location">Details of the location</string>
-    <string name="my_account">My account</string>
     <string name="already_registred_text">Already registered? Click here to identify yourself.</string>
     <string name="dont_have_an_account_text">Don\'t have an account yet? Click here to create one.</string>
     <string name="languages">Languages</string>
@@ -32,5 +31,6 @@
     <string name="hascinema">Has cinema</string>
     <string name="hassportcenter">Has sport center</string>
     <string name="hasswimmingpool">Has swimming pool</string>
-    <string name="addnewhouse">Add a house</string>
+    <string name="listofhouse">My houses</string>
+    <string name="myaccount">My account</string>
 </resources>

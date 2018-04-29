@@ -28,25 +28,22 @@ public class DetailsLocation extends AppCompatActivity implements NavigationView
 
         final Location location = HouseSellingDatabase.getInstance(this).locationDAO().getLocationById(getIntent().getIntExtra("IdLocation", 0));
 
+        // HERE YOU JUST SET THE TEXT IN THE EDITTEXT, SO THE USER CAN EDIT WHAT EVER HE WANTS
         EditText edescription = (EditText) findViewById(R.id.description_details_location);
         edescription.setText(location.getDescription(), TextView.BufferType.EDITABLE);
 
         EditText etown = (EditText) findViewById(R.id.town_details_location);
         etown.setText(location.getTown(), TextView.BufferType.EDITABLE);
 
-
+        // HERE YOU SET CHECKED TRUE OR NOT (DEPENDS ON WHAT THE USER HAS INSERTED ON "CREATE LOCATION")
         CheckBox cbswimmingpool = (CheckBox)findViewById(R.id.hasswimmingpool_details_location);
         cbswimmingpool.setChecked(location.isHasSwimmingPool());
-
 
         CheckBox cbcinema = (CheckBox)findViewById(R.id.hascinema_details_location);
         cbcinema.setChecked(location.isHasCinema());
 
-
         CheckBox cbsportcenter = (CheckBox)findViewById(R.id.hassportcenter_details_location);
         cbsportcenter.setChecked(location.isHasSportCenter());
-
-
     }
 
     public void savelocation(View view) {
@@ -59,13 +56,10 @@ public class DetailsLocation extends AppCompatActivity implements NavigationView
         location.setHasCinema(onCheckBoxClickedCinema2(view));
         location.setHasSportCenter(onCheckBoxClickedSportCenter2(view));
 
-
         HouseSellingDatabase.getInstance(this).locationDAO().updateLocation(location);
 
         Intent intent = new Intent(this, AllTowns.class);
-
         intent.putExtra("IdUser", getIntent().getIntExtra("IdUser", 0));
-
         startActivity(intent);
     }
 
@@ -75,53 +69,54 @@ public class DetailsLocation extends AppCompatActivity implements NavigationView
 
         HouseSellingDatabase.getInstance(this).locationDAO().deleteLocation(location);
 
+        //DEFINE THE NEXT ACTIVITY
         Intent intent = new Intent(this, AllTowns.class);
-
         intent.putExtra("IdUser", getIntent().getIntExtra("IdUser", 0));
-
         startActivity(intent);
     }
 
-    public boolean onCheckBoxClickedSwimmingPool2(View view){
+    // IF THE USER CHANGE THE CHECKBOX, YOU NEED TO KNOW WHEN YOU SAVE CHANGES
+    public boolean onCheckBoxClickedSwimmingPool2(View view) {
         CheckBox cbSwimmingPool = (CheckBox) findViewById(R.id.hasswimmingpool_details_location);
 
         boolean swimmingpool_ischecked;
-        if(cbSwimmingPool.isChecked()){
+        if(cbSwimmingPool.isChecked()) {
             swimmingpool_ischecked = true;
         }
-        else{
+        else {
             swimmingpool_ischecked = false;
         }
         return swimmingpool_ischecked;
     }
 
-    public boolean onCheckBoxClickedCinema2(View view){
+    public boolean onCheckBoxClickedCinema2(View view) {
         CheckBox cbCinema = (CheckBox) findViewById(R.id.hascinema_details_location);
 
         boolean cinema_ischecked;
-        if(cbCinema.isChecked()){
+        if(cbCinema.isChecked()) {
             cinema_ischecked = true;
         }
-        else{
+        else {
             cinema_ischecked = false;
         }
         return cinema_ischecked;
     }
 
-    public boolean onCheckBoxClickedSportCenter2(View view){
+    public boolean onCheckBoxClickedSportCenter2(View view) {
         CheckBox cbSportCenter = (CheckBox) findViewById(R.id.hassportcenter_details_location);
 
         boolean sportcenter_ischecked;
-        if(cbSportCenter.isChecked()){
+        if(cbSportCenter.isChecked()) {
             sportcenter_ischecked = true;
         }
-        else{
+        else {
             sportcenter_ischecked = false;
         }
         return sportcenter_ischecked;
     }
 
     @Override
+    //TO REDIRECT MENUS TO THE RIGHT PAGE THANKS TO THE ID OF THE ITEM OF THE NAVIGATION DRAWER
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_languages:
@@ -145,5 +140,11 @@ public class DetailsLocation extends AppCompatActivity implements NavigationView
         }
     }
 
-
+    //ACTION TO THE BACK BUTTON
+    public void onBackPressed() {
+        Intent intent = new Intent(this, AllTowns.class);
+        intent.putExtra("IdUser", getIntent().getIntExtra("IdUser", 0));
+        startActivity(intent);
+        finish();
+    }
 }

@@ -20,7 +20,7 @@ import static com.example.nico.projet.Local.HouseSellingDatabase.DATABASE_VERSIO
 
 public abstract class HouseSellingDatabase extends RoomDatabase
 {
-    public static final int DATABASE_VERSION=2;
+    public static final int DATABASE_VERSION=3;
     public static final String DATABASE_NAME = "EDMT-Database-Room" ;
 
     public abstract UserDAO userDAO ();

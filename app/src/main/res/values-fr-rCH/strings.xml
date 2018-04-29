@@ -8,7 +8,7 @@
     <string name="lastname">Nom</string>
     <string name="firstname">Prénom</string>
     <string name="email">Email</string>
-    <string name="m2">M2</string>
+    <string name="m2">Mètre carré</string>
     <string name="description">Description</string>
     <string name="floor">Etage</string>
     <string name="price">Prix</string>
@@ -22,7 +22,6 @@
     <string name="save">Sauvegarder</string>
     <string name="delete">Supprimer</string>
     <string name="details_of_the_location">Détails du lieu</string>
-    <string name="my_account">Mon compte</string>
     <string name="already_registred_text">Vous avez déjà un compte? Cliquez ici pour vous identifier.</string>
     <string name="dont_have_an_account_text">Vous n\'avez pas encore de compte? Cliquez ici pour en créer un.</string>
     <string name="languages">Langues</string>
@@ -33,5 +32,7 @@
     <string name="hascinema">A un cinéma</string>
     <string name="hassportcenter">A un centre de sport</string>
     <string name="hasswimmingpool">A une piscine</string>
-    <string name="addnewhouse">Ajouter un bien</string>
+    <string name="listofhouse">Mes biens</string>
+    <string name="myaccount">Mon compte</string>
+
 </resources>

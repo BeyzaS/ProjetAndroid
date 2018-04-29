@@ -8,9 +8,6 @@ import java.util.List;
 
 import io.reactivex.annotations.NonNull;
 
-// CORRESPOND A UNE TABLE, ET CHAMP = COLONNE
-
-
 @Entity(tableName = "user")
 public class User {
 
@@ -39,8 +36,6 @@ public class User {
     @NonNull
     @ColumnInfo(name = "Email")
     private String email;
-
-
 
     public User(String firstname, String lastname, String username, String password, String email)
     {
@@ -98,7 +93,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     @Override
     public String toString() {

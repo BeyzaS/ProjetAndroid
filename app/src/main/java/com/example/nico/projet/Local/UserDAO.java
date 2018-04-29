@@ -10,13 +10,10 @@ import com.example.nico.projet.Model.User;
 
 import java.util.List;
 
-// import io.reactivex.Flowable;
+// DETERMINE THE METHODS AND ACTION THEY WILL HAVE ON THE DB
+// NORMALLY EVERYTHING WITH @QUERY, BUT @INSERT... ARE THERE TO SIMPLIFY
 
-
-// DETERMINE METHODES, ET L'ACTION QU'ELLES VONT AVOIR SUR LA DB
-// NORMALEMENT TOUT AVEC @QUERY, MAIS @INSERT ... SONT LA POUR SIMPLIFIER
-
-@Dao // ANNONCE QUE LA CLASSE EST EN DAO
+@Dao // ANNOUNCES THAT THE CLASS IS IN DAO
 public interface UserDAO
 {
 
@@ -24,17 +21,13 @@ public interface UserDAO
     User getUserById(int userId);
 
 
-    // METHODE POUR LE LOGIN
+    // METHOD FOR THE LOGIN
     @Query("SELECT * FROM user WHERE Username = :username AND Password = :password")
     User getUser(String username, String password);
 
-    // METHODE POUR VERIFIER LES DOUBLONS
+    // METHOD TO CHECK DOUBLET
     @Query("SELECT Username FROM user WHERE Username = :username")
     String getUsername(String username);
-
-
-    //@Query("UPDATE user SET Id=:idUser, Firstname=:firstname, Lastname=:lastname, Username=:username, Password=:password, Email=:email WHERE id=:idUser")
-    //User updateUser(int idUser, String firstname, String lastname, String username, String password, String email);
 
     @Insert
     void insertUser(User... users);

@@ -7,9 +7,6 @@ import android.arch.persistence.room.PrimaryKey;
 
 import io.reactivex.annotations.NonNull;
 
-// CORRESPOND A UNE TABLE, ET CHAMP = COLONNE
-
-
 @Entity(tableName = "house")
 public class House {
 
@@ -35,10 +32,6 @@ public class House {
     private int price;
 
     @NonNull
-    @ColumnInfo(name = "Floor")
-    private int floor;
-
-    @NonNull
     @ColumnInfo(name = "Address")
     private String address;
 
@@ -53,12 +46,11 @@ public class House {
     @ColumnInfo(name = "IdUser")
     private int idUser;
 
-    public House(String type, String description, int squareMeter, int price, int floor, String address, int idLocation, int idUser) {
+    public House(String type, String description, int squareMeter, int price, String address, int idLocation, int idUser) {
         this.type = type;
         this.description = description;
         this.squareMeter = squareMeter;
         this.price = price;
-        this.floor = floor;
         this.address = address;
         this.idLocation = idLocation;
         this.idUser = idUser;
@@ -104,14 +96,6 @@ public class House {
         this.price = price;
     }
 
-    public int getFloor() {
-        return floor;
-    }
-
-    public void setFloor(int floor) {
-        this.floor = floor;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -136,31 +120,11 @@ public class House {
         this.idUser = idUser;
     }
 
-    @Override
-    /*
     public String toString() {
-        return "House{" +
-                "id=" + id +
-                ", type=" + type +
-                ", description='" + description + '\'' +
-                ", squareMeter=" + squareMeter +
-                ", price=" + price +
-                ", floor=" + floor +
-                ", address='" + address + '\'' +
-                ", idLocation=" + idLocation +
-                ", idUser=" + idUser +
-                '}';
+        return  type +
+                "\n" + description +
+                "\n" + squareMeter +
+                "\n" + price +
+                "\n" + address + "\n";
     }
-    */
-
-    public String toString() {
-        return  "Type : " + type +
-                "\nDescription : '" + description +
-                "\nSquare meter : " + squareMeter +
-                "\nPrice : " + price +
-                "\nFloor : " + floor +
-                "\nAddress : '" + address +
-                "\n";
-    }
-
 }

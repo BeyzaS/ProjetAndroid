@@ -32,7 +32,7 @@ public interface LocationDAO
     void deleteAllLocations();
 
     @Query("SELECT Town FROM location")
-    String[] getAllTown();
+    List<String> getAllTown();
 
     @Query("SELECT * FROM location")
     List<Location> getAllTowns();

@@ -79,33 +79,15 @@
             android:layout_marginTop="24dp"
             android:layout_gravity="center" />
 
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/m2_create"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/m2_create"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:hint="@string/m2"
-                android:textColor="@color/textColor"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/floor_create"
-                android:layout_width="97dp"
-                android:layout_height="45dp"
-                android:ems="10"
-                android:hint="@string/floor"
-                android:inputType="number"
-                android:textColor="@color/textColor" />
-
-        </LinearLayout>
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/m2"
+            android:textColor="@color/textColor"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/price_create"

@@ -20,7 +20,6 @@ public class Languages extends Activity implements View.OnClickListener {
     private ImageView swiss, british, turkish;
     private Locale myLocale;
 
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +27,7 @@ public class Languages extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_languages);
         Intent intent = getIntent();
 
-        //Lié bouton
+        //LINK TO IMAGEVIEW
         swiss = findViewById(R.id.swiss);
         swiss.setOnClickListener(this);
 
@@ -42,8 +41,7 @@ public class Languages extends Activity implements View.OnClickListener {
     }
 
     //Loading a saved locale
-    public void loadLocale()
-    {
+    public void loadLocale() {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs",Activity.MODE_PRIVATE);
         String language = prefs.getString(langPref, "");
@@ -60,8 +58,7 @@ public class Languages extends Activity implements View.OnClickListener {
     }
 
     //Changing the language in the application
-    public void changeLang(String lang)
-    {
+    public void changeLang(String lang) {
         if (lang.equalsIgnoreCase(""))
             return;
         myLocale = new Locale(lang);
@@ -72,13 +69,12 @@ public class Languages extends Activity implements View.OnClickListener {
         getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 
-
     @Override
+    //HERE, DEPEND ON WITCH FLAG YOU CLICK ON, IT TAKES THE RIGHT CASE
     public void onClick(View v) {
 
         String lang ="en";
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.british:
                 lang="en";
                 break;
@@ -96,6 +92,7 @@ public class Languages extends Activity implements View.OnClickListener {
         }
         changeLang(lang);
 
+        //WHEN THE USER CHANGE THE LANGUAGES, HE MUST SIGN IN
         Intent intent = new Intent(Languages.this, MainActivity.class);
         startActivity(intent);
         this.finish();
@@ -110,5 +107,4 @@ public class Languages extends Activity implements View.OnClickListener {
             getBaseContext().getResources().updateConfiguration(newConfig, getBaseContext().getResources().getDisplayMetrics());
         }
     }
-
 }

@@ -16,39 +16,57 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_my_account"
+            <TextView
+                android:id="@+id/createlocation_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:width="145dp"
-                android:layout_gravity="center"
-                android:background="@color/buttonColor"
-                android:textColor="@color/backgroundColor"
-                android:text="@string/my_account"
-                android:onClick="useraccount_update"
-                android:layout_marginLeft="16dp" />
+                android:text="@string/listofhouse"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:layout_gravity="top"
+                android:textSize="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="125dp"
+                android:gravity="center"/>
 
-            <Button
-                android:id="@+id/button_addhouse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/button_my_account"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:width="145dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="60dp"
-                android:background="@color/buttonColor"
-                android:textColor="@color/backgroundColor"
-                android:text="@string/addnewhouse"
-                android:onClick="create_sale" />
+                android:layout_gravity="right"
+                android:onClick="useraccount_update"
+                android:src="@mipmap/useraccount"
+                android:layout_marginRight="16dp" />
 
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/listview_houses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/listview_houses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+                <android.support.design.widget.FloatingActionButton
+                android:id="@+id/button_addhouse"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/backgroundColor"
+                app:borderWidth="2dp"
+                android:layout_gravity="bottom|right"
+                android:src="@mipmap/addhouse"
+                android:layout_margin="16dp"
+                android:onClick="create_sale" />
+
+        </FrameLayout>
+
 
     </LinearLayout>
 
